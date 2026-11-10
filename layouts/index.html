@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="hero">
+  <h1>{{ site.Title }}</h1>
+  <div class="lead">{{ .Content }}</div>
+</section>
+<h2>Modules</h2>
+{{ partial "module-grid.html" (site.GetPage "/moduli") }}
+{{ range slice "demos" "workshop" }}
+  {{ with site.GetPage (printf "/%s" .) }}{{ if .Pages }}
+    <h2>{{ .Title }}</h2>
+    {{ partial "item-grid.html" . }}
+  {{ end }}{{ end }}
+{{ end }}
+{{ end }}

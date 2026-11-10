@@ -1,0 +1,37 @@
+{{ define "main" }}
+<article class="module">
+  <p class="crumb"><a href="{{ "/moduli/" | relURL }}">← All modules</a></p>
+  <h1>{{ .Title }} <span class="badge {{ .Params.status }}">{{ .Params.status }}</span></h1>
+
+  <aside class="credit">
+    {{ if .Params.source }}
+      <strong>Design by {{ .Params.designer | default "Eddy Bergman" }}</strong> —
+      <a href="{{ .Params.source }}">{{ .Params.source_title | default "original article" }} ↗</a>
+    {{ else }}
+      <strong>Original design by kasetron.</strong>
+    {{ end }}
+    {{ with .Params.credit_note }}<br><span>{{ . }}</span>{{ end }}
+  </aside>
+
+  {{ .Content }}
+
+  {{ $docs := .Resources.Match "schematics/*" }}
+  {{ with $docs }}
+  <h2>Schematic</h2>
+  <ul>{{ range . }}<li><a href="{{ .RelPermalink }}">{{ path.Base .Name }}</a></li>{{ end }}</ul>
+  {{ end }}
+
+  {{ $imgs := .Resources.ByType "image" }}
+  {{ if $imgs }}
+  <details class="gallery">
+    <summary>All photos ({{ len $imgs }})</summary>
+    <div class="thumbs">
+      {{ range $imgs }}
+        {{ $t := .Resize "480x q80" }}
+        <a href="{{ .RelPermalink }}"><img src="{{ $t.RelPermalink }}" alt="{{ path.Base .Name }}" loading="lazy"></a>
+      {{ end }}
+    </div>
+  </details>
+  {{ end }}
+</article>
+{{ end }}

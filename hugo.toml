@@ -1,0 +1,12 @@
+baseURL = "https://kasetron.github.io/"
+languageCode = "en"
+title = "Kasetron Modular"
+disableKinds = ["taxonomy", "term", "RSS"]
+# 'archivio/' sta fuori da content/, quindi Hugo non lo pubblica mai.
+
+[params]
+  description = "Build log of a DIY modular synthesizer, built from salvaged parts."
+  author = "kasetron"
+
+[markup.goldmark.renderer]
+  unsafe = true   # permette HTML nel markdown (es. <details>, <figure>)

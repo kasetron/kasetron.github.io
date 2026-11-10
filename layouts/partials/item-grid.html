@@ -1,0 +1,18 @@
+<div class="grid">
+{{ range .Pages.ByDate.Reverse }}
+  {{ $page := . }}
+  {{ $cover := "" }}
+  {{ with .Params.cover }}{{ $cover = $page.Resources.GetMatch . }}{{ end }}
+  <a class="card" href="{{ .RelPermalink }}">
+    {{ with $cover }}
+      {{ $t := .Fill "640x420 q80" }}
+      <img src="{{ $t.RelPermalink }}" alt="" loading="lazy">
+    {{ else }}<div class="noimg">{{ .Section }}</div>{{ end }}
+    <div class="card-body">
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Params.summary }}</p>
+      <p class="by">{{ .Date.Format "2 Jan 2006" }}</p>
+    </div>
+  </a>
+{{ end }}
+</div>

@@ -1,0 +1,31 @@
+:root{--bg:#faf8f4;--fg:#222;--muted:#6b6b6b;--accent:#c0392b;--card:#fff;--line:#e4dfd6}
+@media (prefers-color-scheme:dark){:root{--bg:#171717;--fg:#e8e6e1;--muted:#9a9a9a;--accent:#ff7a66;--card:#202020;--line:#333}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+main,.site-header,footer{max-width:960px;margin:0 auto;padding:0 20px}
+.site-header{display:flex;justify-content:space-between;align-items:baseline;padding-top:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.brand{font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--fg);letter-spacing:.02em}
+a{color:var(--accent)}
+img{max-width:100%;height:auto;border-radius:6px}
+h1,h2,h3{line-height:1.25}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin:20px 0 40px}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit}
+.card:hover{border-color:var(--accent)}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:0;display:block}
+.noimg{height:180px;display:grid;place-items:center;color:var(--muted);background:var(--line)}
+.card-body{padding:12px 16px 16px}.card-body h3{margin:0 0 6px}.card-body p{margin:8px 0 0;color:var(--muted);font-size:.92rem}
+.badge{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted);vertical-align:middle}
+.badge.working{background:#2e7d32;color:#fff;border-color:#2e7d32}
+.badge.building{background:#f9a825;color:#222;border-color:#f9a825}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:12px}
+.thumbs img{width:100%;height:110px;object-fit:cover}
+.crumb{margin-bottom:0}
+article img{display:block;margin:1.2em auto 0}
+article em{color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+footer{padding-top:30px;padding-bottom:40px;color:var(--muted);font-size:.85rem}
+.credit{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:10px 14px;margin:14px 0 22px;font-size:.95rem}
+.credit span{color:var(--muted)}
+.card-body p.by{font-size:.8rem;margin-top:10px;font-style:italic}
+nav a{margin-left:18px}
+.meta,.empty{color:var(--muted)}

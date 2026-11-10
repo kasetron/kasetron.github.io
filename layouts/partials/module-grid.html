@@ -1,0 +1,19 @@
+<div class="grid">
+{{ range .Pages.ByWeight.Reverse }}
+  {{ $page := . }}
+  {{ $cover := "" }}
+  {{ with .Params.cover }}{{ $cover = $page.Resources.GetMatch . }}{{ end }}
+  <a class="card" href="{{ .RelPermalink }}">
+    {{ with $cover }}
+      {{ $t := .Fill "640x420 q80" }}
+      <img src="{{ $t.RelPermalink }}" alt="" loading="lazy">
+    {{ else }}<div class="noimg">no photo yet</div>{{ end }}
+    <div class="card-body">
+      <h3>{{ .Title }}</h3>
+      <span class="badge {{ .Params.status }}">{{ .Params.status | default "planned" }}</span>
+      <p>{{ .Params.summary }}</p>
+      <p class="by">{{ if .Params.source }}{{ .Params.designer | default "Eddy Bergman" }}{{ else }}Original design{{ end }}</p>
+    </div>
+  </a>
+{{ end }}
+</div>

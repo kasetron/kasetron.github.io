@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article>
+  <p class="crumb"><a href="{{ printf "/%s/" .Section | relURL }}">← {{ (site.GetPage (printf "/%s" .Section)).Title }}</a></p>
+  <h1>{{ .Title }}</h1>
+  <p class="meta">{{ .Date.Format "2 January 2006" }}
+    {{ with .Params.module }}{{ with site.GetPage (printf "/moduli/%s" .) }} · module: <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+  </p>
+  {{ .Content }}
+  {{ $imgs := .Resources.ByType "image" }}
+  {{ if $imgs }}
+  <details class="gallery" open>
+    <summary>Photos ({{ len $imgs }})</summary>
+    <div class="thumbs">
+      {{ range $imgs }}{{ $t := .Resize "480x q80" }}<a href="{{ .RelPermalink }}"><img src="{{ $t.RelPermalink }}" alt="{{ path.Base .Name }}" loading="lazy"></a>{{ end }}
+    </div>
+  </details>
+  {{ end }}
+</article>
+{{ end }}

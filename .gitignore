@@ -1,0 +1,15 @@
+# output generato da Hugo
+public/
+resources/_gen/
+.hugo_build.lock
+
+# materiale di terzi (Bergman, MeeBilt...): resta sul disco/chiavetta ma NON va su GitHub
+archivio/**/terze-parti/
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+*.kicad_prl
+*-backups/
+*.kicad_pcb-bak
+fp-info-cache
