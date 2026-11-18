@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="module">
-  <p class="crumb"><a href="{{ "/moduli/" | relURL }}">← All modules</a></p>
-  <h1>{{ .Title }} <span class="badge {{ .Params.status }}">{{ .Params.status }}</span></h1>
+  <p class="crumb"><a href="{{ "/modules/" | relURL }}">← All modules</a></p>
+  <h1>{{ .Title }} <span class="badge {{ .Params.status | default "planned" }}">{{ .Params.status | default "planned" }}</span></h1>
 
   <aside class="credit">
     {{ if .Params.source }}

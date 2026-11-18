@@ -1,6 +1,5 @@
 ---
 title: "01 · Digisound 80 VCO (AS3340)"
-weight: 2
 status: "working"
 summary: "AS3340 oscillator, 1 V/oct, with per-output AC/DC switches, built-in tuner and sine shaper."
 cover: "photos/vcoDigi_finished1.jpg"

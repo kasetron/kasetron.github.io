@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 date: {{ .Date }}
-module: "01-vco"          # folder name under content/moduli/ (optional)
+module: "01-vco"          # module folder name under content/modules/ (optional)
 summary: "What is shown in this demo."
 cover: ""                 # optional image in this folder
 ---

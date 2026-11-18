@@ -1,6 +1,5 @@
 ---
 title: "02 · Digisound 80.6 Lowpass Filter (AS3320)"
-weight: 3
 status: "working"
 summary: "AS3320 voltage-controlled lowpass with 1 V/oct tracking, external resonance and bypass."
 cover: "photos/LPFDigi_pos.jpg"

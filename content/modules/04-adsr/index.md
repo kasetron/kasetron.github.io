@@ -1,6 +1,5 @@
 ---
 title: "04 · Precision ADSR (Kassutronics)"
-weight: 5
 status: "working"
 summary: "ADSR around a 7555 with opamp precision rectifiers, so the envelope reaches 0 V."
 designer: "Eddy Bergman"

@@ -1,6 +1,5 @@
 ---
 title: "07 · Korg MS-20 VCF"
-weight: 8
 status: "building"
 summary: "MS-20 style Sallen-Key filter (OTA version), panel test-fitted, electronics to do."
 cover: "photos/KorgMS20_pos.jpg"

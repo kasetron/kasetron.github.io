@@ -1,6 +1,5 @@
 ---
 title: "06 · VCA-1 (AS3080)"
-weight: 7
 status: "working"
 summary: "Linear VCA / 3-input mixer around the AS3080 OTA."
 designer: "Eddy Bergman"

@@ -1,6 +1,5 @@
 ---
 title: "03 · Output / Mixer"
-weight: 4
 status: "working"
 summary: "Stereo output: pre-gain, FX send/return, line out, headphones and peak LEDs."
 credit_note: "Reference: the \"Output\" module by MeeBilt Instruments (KiCad project from 2023: VU meter, balanced line driver, headphone amp), found online. Its schematic is kept in my private archive."

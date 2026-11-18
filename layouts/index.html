@@ -4,7 +4,7 @@
   <div class="lead">{{ .Content }}</div>
 </section>
 <h2>Modules</h2>
-{{ partial "module-grid.html" (site.GetPage "/moduli") }}
+{{ partial "module-grid.html" (site.GetPage "/modules") }}
 {{ range slice "demos" "workshop" }}
   {{ with site.GetPage (printf "/%s" .) }}{{ if .Pages }}
     <h2>{{ .Title }}</h2>

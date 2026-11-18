@@ -1,6 +1,5 @@
 ---
 title: "00 · Power Supply (±12 V / ±15 V)"
-weight: 1
 status: "working"
 summary: "Linear supply with LM317/LM337 regulators, in a salvaged wardrobe drawer."
 cover: "photos/psu_5.jpg"

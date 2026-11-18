@@ -1,6 +1,5 @@
 ---
 title: "05 · AD/AR envelope (7555)"
-weight: 6
 status: "working"
 summary: "Simple AD/AR envelope generator with a 7555 timer."
 designer: "Eddy Bergman"

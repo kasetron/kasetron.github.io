@@ -1,5 +1,5 @@
 <div class="grid">
-{{ range .Pages.ByWeight.Reverse }}
+{{ range sort .Pages "File.ContentBaseName" "desc" }}
   {{ $page := . }}
   {{ $cover := "" }}
   {{ with .Params.cover }}{{ $cover = $page.Resources.GetMatch . }}{{ end }}

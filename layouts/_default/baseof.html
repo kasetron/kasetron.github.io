@@ -11,7 +11,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
-    <nav><a href="{{ "/moduli/" | relURL }}">Modules</a><a href="{{ "/demos/" | relURL }}">Demos</a><a href="{{ "/workshop/" | relURL }}">Workshop</a></nav>
+    <nav><a href="{{ "/modules/" | relURL }}">Modules</a><a href="{{ "/demos/" | relURL }}">Demos</a><a href="{{ "/workshop/" | relURL }}">Workshop</a></nav>
   </header>
   <main>{{ block "main" . }}{{ end }}</main>
   <footer>Circuits by <a href="https://www.eddybergman.com/">Eddy Bergman</a> unless stated otherwise. Build log by {{ site.Params.author }}.</footer>

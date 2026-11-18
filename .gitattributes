@@ -1,0 +1,4 @@
+# KiCad files are LF in the repo regardless of the OS that saved them
+*.kicad_sch text eol=lf
+*.kicad_pcb text eol=lf
+*.kicad_pro text eol=lf
