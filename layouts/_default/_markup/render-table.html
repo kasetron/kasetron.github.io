@@ -1,0 +1,20 @@
+{{- /* Every markdown table becomes a "parts list". An all-empty header row is dropped,
+       so `| | |` + `|---|---|` gives a clean label/value list. */ -}}
+{{- $hasHead := false -}}
+{{- range .THead }}{{ range . }}{{ if strings.TrimSpace (plainify .Text) }}{{ $hasHead = true }}{{ end }}{{ end }}{{ end -}}
+<div class="parts">
+<table>
+  {{- if $hasHead }}
+  <thead>
+    {{- range .THead }}
+    <tr>{{ range . }}<th{{ with .Alignment }} style="text-align:{{ . }}"{{ end }}>{{ .Text }}</th>{{ end }}</tr>
+    {{- end }}
+  </thead>
+  {{- end }}
+  <tbody>
+    {{- range .TBody }}
+    <tr>{{ range . }}<td{{ with .Alignment }} style="text-align:{{ . }}"{{ end }}>{{ .Text }}</td>{{ end }}</tr>
+    {{- end }}
+  </tbody>
+</table>
+</div>

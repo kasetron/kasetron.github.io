@@ -5,7 +5,7 @@
 
   <aside class="credit">
     {{ if .Params.source }}
-      <strong>Design by {{ .Params.designer | default "Eddy Bergman" }}</strong> —
+      <strong>{{ with .Params.designer }}Design by {{ . }}{{ else }}External design{{ end }}</strong> —
       <a href="{{ .Params.source }}">{{ .Params.source_title | default "original article" }} ↗</a>
     {{ else }}
       <strong>Original design by kasetron.</strong>
@@ -21,17 +21,6 @@
   <ul>{{ range . }}<li><a href="{{ .RelPermalink }}">{{ path.Base .Name }}</a></li>{{ end }}</ul>
   {{ end }}
 
-  {{ $imgs := .Resources.ByType "image" }}
-  {{ if $imgs }}
-  <details class="gallery">
-    <summary>All photos ({{ len $imgs }})</summary>
-    <div class="thumbs">
-      {{ range $imgs }}
-        {{ $t := .Resize "480x q80" }}
-        <a href="{{ .RelPermalink }}"><img src="{{ $t.RelPermalink }}" alt="{{ path.Base .Name }}" loading="lazy"></a>
-      {{ end }}
-    </div>
-  </details>
-  {{ end }}
+  {{ partial "gallery.html" (dict "page" . "title" "All photos" "open" false) }}
 </article>
 {{ end }}

@@ -6,14 +6,6 @@
     {{ with .Params.module }}{{ with site.GetPage (printf "/modules/%s" .) }} · module: <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
   </p>
   {{ .Content }}
-  {{ $imgs := .Resources.ByType "image" }}
-  {{ if $imgs }}
-  <details class="gallery" open>
-    <summary>Photos ({{ len $imgs }})</summary>
-    <div class="thumbs">
-      {{ range $imgs }}{{ $t := .Resize "480x q80" }}<a href="{{ .RelPermalink }}"><img src="{{ $t.RelPermalink }}" alt="{{ path.Base .Name }}" loading="lazy"></a>{{ end }}
-    </div>
-  </details>
-  {{ end }}
+  {{ partial "gallery.html" (dict "page" . "title" "Photos" "open" true) }}
 </article>
 {{ end }}

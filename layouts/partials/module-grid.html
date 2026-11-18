@@ -12,7 +12,7 @@
       <h3>{{ .Title }}</h3>
       <span class="badge {{ .Params.status }}">{{ .Params.status | default "planned" }}</span>
       <p>{{ .Params.summary }}</p>
-      <p class="by">{{ if .Params.source }}{{ .Params.designer | default "Eddy Bergman" }}{{ else }}Original design{{ end }}</p>
+      <p class="by">{{ if .Params.source }}{{ .Params.designer | default "External design" }}{{ else }}Original design{{ end }}</p>
     </div>
   </a>
 {{ end }}

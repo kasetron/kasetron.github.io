@@ -3,7 +3,7 @@
 A [Hugo](https://gohugo.io/) site with two goals:
 
 1. **Learn Hugo** (layouts, page bundles, archetypes, image processing, deploy with GitHub Actions).
-2. **Document my electronics and DIY projects**, mainly a self-built modular synthesizer made largely from salvaged parts. Almost every module follows a design by [Eddy Bergman](https://www.eddybergman.com/); each page links the original article.
+2. **Document my electronics and DIY projects**, mainly a self-built modular synthesizer made largely from salvaged parts.
 
 Live: <https://kasetron.github.io>
 
@@ -20,8 +20,6 @@ archive/NN-name/kicad/        KiCad projects (backed up in git, not published)
 archive/NN-name/third-party/  third-party material: on disk only, git-ignored
 .github/workflows/hugo.yml    build and deploy on every push to main
 ```
-
-Conventions: everything (folders, files, code, content) is in **English**. Modules are numbered `NN-name` and **the site order comes from the folder name** (newest first). `public/` and `resources/` are generated and git-ignored.
 
 ## Common tasks
 
@@ -46,10 +44,3 @@ hugo new --kind workshop workshop/name  # new workshop project
 ## Deploy (one-time setup)
 
 Public repo named exactly `kasetron.github.io`, then *Settings → Pages → Source: GitHub Actions*. If the first run fails because Pages was not enabled yet, re-run it from *Actions*.
-
-## Troubleshooting
-
-- **Page missing:** front matter must be between the two `---` lines, with no `draft: true`.
-- **Image not shown:** the path is relative to the page's folder; on GitHub (Linux) file names are case-sensitive.
-- **"requires the extended version":** install the `extended` build.
-- **Red build in Actions:** run the test build above locally; you get the same error.

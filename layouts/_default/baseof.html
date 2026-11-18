@@ -14,6 +14,7 @@
     <nav><a href="{{ "/modules/" | relURL }}">Modules</a><a href="{{ "/demos/" | relURL }}">Demos</a><a href="{{ "/workshop/" | relURL }}">Workshop</a></nav>
   </header>
   <main>{{ block "main" . }}{{ end }}</main>
-  <footer>Circuits by <a href="https://www.eddybergman.com/">Eddy Bergman</a> unless stated otherwise. Build log by {{ site.Params.author }}.</footer>
+  <footer>Build log by {{ site.Params.author }}.</footer>
+  <script src="{{ "js/lightbox.js" | relURL }}" defer></script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+{{- /* usage: partial "gallery.html" (dict "page" . "title" "All photos" "open" false) */ -}}
+{{- $imgs := .page.Resources.ByType "image" -}}
+{{- if $imgs }}
+<details class="gallery"{{ if .open }} open{{ end }}>
+  <summary>{{ .title }} ({{ len $imgs }})</summary>
+  <div class="thumbs">
+    {{- range $imgs }}
+    {{ $t := .Resize "480x q80" }}<a href="{{ .RelPermalink }}" data-lb><img src="{{ $t.RelPermalink }}" alt="{{ path.Base .Name }}" loading="lazy"></a>
+    {{- end }}
+  </div>
+</details>
+{{- end }}

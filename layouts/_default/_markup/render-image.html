@@ -1,0 +1,9 @@
+{{- /* Images from the page bundle open in the lightbox; anything else stays a plain <img>. */ -}}
+{{- $res := "" -}}
+{{- if not (urls.Parse .Destination).Scheme }}{{ $res = .PageInner.Resources.Get .Destination }}{{ end -}}
+{{- with $res -}}
+  {{- $t := .Resize "1400x q80" -}}
+  <a href="{{ .RelPermalink }}" data-lb data-caption="{{ $.Text }}"><img src="{{ $t.RelPermalink }}" alt="{{ $.Text }}" loading="lazy"></a>
+{{- else -}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy">
+{{- end -}}
