@@ -2,7 +2,8 @@
        so `| | |` + `|---|---|` gives a clean label/value list. */ -}}
 {{- $hasHead := false -}}
 {{- range .THead }}{{ range . }}{{ if strings.TrimSpace (plainify .Text) }}{{ $hasHead = true }}{{ end }}{{ end }}{{ end -}}
-<div class="parts">
+{{- $cols := 0 }}{{ with index .TBody 0 }}{{ $cols = len . }}{{ end -}}
+<div class="parts{{ if gt $cols 2 }} wide{{ end }}">
 <table>
   {{- if $hasHead }}
   <thead>

@@ -1,5 +1,5 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-{{ .Content }}
+{{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 {{ if .Pages }}{{ partial "item-grid.html" . }}{{ else }}<p class="empty">Nothing here yet.</p>{{ end }}
 {{ end }}

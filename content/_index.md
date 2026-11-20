@@ -1,5 +1,7 @@
 ---
 title: "Kasetron Modular"
+build:
+  publishResources: false   # hero.jpg is only used through the resized/grayscale copies
 ---
 This is the build log of my DIY modular synthesizer, made mostly from salvaged parts and in continuous evolution. What started as a strange curiosity about electronic sound generation in early 2025 slowly became a full-time obsession. At first, thinking about building my own synthesizer seemed overwhelming, but time passed and I couldn't stop watching [LOOK MUM NO COMPUTER](https://www.lookmumnocomputer.com) videos and searching for sources. In a few months I had a plan: I didn't want to start with beginner projects and I came up with a small but rather complete design. Two independent voices - a bass line and a lead - and a TR-808 drum machine clone. All fitted in an old wardrobe drawer. Shiny lights, see-through design, my own format and my own graphics. Industrial, punchy, raw-punk garbage synth! Every module is a new adventure and at this point there is no definitive goal anymore. I still need to fill the whole rack and I'm already working on new projects. That's why there is a [Workshop](/workshop/) section.
 

@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Params.summary }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
   {{ $css := resources.Get "css/style.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
-    <nav><a href="{{ "/modules/" | relURL }}">Modules</a><a href="{{ "/demos/" | relURL }}">Demos</a><a href="{{ "/workshop/" | relURL }}">Workshop</a></nav>
-  </header>
+  <div class="screen{{ if .IsHome }} screen-full{{ end }}">
+    <header class="site-header">
+      <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+      <nav><a href="{{ "/modules/" | relURL }}">Modules</a><a href="{{ "/demos/" | relURL }}">Demos</a><a href="{{ "/workshop/" | relURL }}">Workshop</a></nav>
+    </header>
+    {{ block "hero" . }}{{ end }}
+  </div>
   <main>{{ block "main" . }}{{ end }}</main>
   <footer>Build log by {{ site.Params.author }}.</footer>
   <script src="{{ "js/lightbox.js" | relURL }}" defer></script>
+  <script src="{{ "js/cards.js" | relURL }}" defer></script>
 </body>
 </html>

@@ -1,8 +1,16 @@
-{{ define "main" }}
+{{ define "hero" }}
 <section class="hero">
-  <h1>{{ site.Title }}</h1>
-  <div class="lead">{{ .Content }}</div>
+  {{ with .Resources.GetMatch "hero.*" }}
+    {{ $s := (.Resize "900x q70").Filter images.Grayscale }}
+    {{ $l := (.Resize "1800x q70").Filter images.Grayscale }}
+    <img class="hero-img" src="{{ $l.RelPermalink }}" srcset="{{ $s.RelPermalink }} 900w, {{ $l.RelPermalink }} 1800w" sizes="100vw" width="{{ $l.Width }}" height="{{ $l.Height }}" alt="" fetchpriority="high">
+  {{ end }}
+  <h1 class="hero-title">{{ range $i, $w := split site.Title " " }}{{ if $i }}<br>{{ end }}{{ $w }}{{ end }}</h1>
 </section>
+{{ end }}
+
+{{ define "main" }}
+<div class="prose intro">{{ .Content }}</div>
 <h2>Modules</h2>
 {{ partial "module-grid.html" (site.GetPage "/modules") }}
 {{ range slice "demos" "workshop" }}

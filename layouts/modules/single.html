@@ -13,7 +13,7 @@
     {{ with .Params.credit_note }}<br><span>{{ . }}</span>{{ end }}
   </aside>
 
-  {{ .Content }}
+  <div class="prose">{{ .Content }}</div>
 
   {{ $docs := .Resources.Match "schematics/*" }}
   {{ with $docs }}
